@@ -23,7 +23,7 @@ public class AstroFormController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/* Uncomment the below code to run your application
+//Uncomment the below code to run your application
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
 		String date=request.getParameter("dob1");
@@ -37,7 +37,15 @@ public class AstroFormController extends HttpServlet {
 	// 4. ***Call the findSign method and store the return value in a String variable called as astrosign***
 		
 		
-	
+		Astrozone_entervalues astro = new Astrozone_entervalues(name,gender,dob);
+		AstrozoneCalculator zodiac=new AstrozoneCalculator();
+		
+		astro.setName(name);
+		astro.setGender(gender);
+		astro.setDob(dob);
+		System.out.println(name);  
+		String astrosign=zodiac.findSign(astro);
+		System.out.println(astrosign);
 		
 		if(astrosign.equals("Aquarius")){
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
