@@ -1,109 +1,53 @@
 package service;
 
-import model.Astrozone_entervalues;
-
-public class AstrozoneCalculator {
-	
-public String toString(Astrozone_entervalues person) 
+// Type your code
+public class AstroCalculator
+{
+	public String findSign(model.User u)
 	{
-		return "Name:"+person.getName()+"\nGender:"+person.getGender()+"\nDOB:"+person.getDob();
-	}
-
-public String findSign(Astrozone_entervalues person) {
-	String[] date=person.getDob().split("-");
-	System.out.println(date);
-	int day=Integer.parseInt(date[0]);
-	int month=Integer.parseInt(date[1]);
+		int date=u.d;
+		int month=u.m;
 	
-	System.out.println(day);
-	System.out.println(month);
-	String astro_sign=""; 
-    
-    // checks month and date within the  
-    // valid range of a specified zodiac 
-    if (month == 12){ 
-        if (day < 22) 
-        astro_sign = "Sagittarius"; 
-        else
-        astro_sign ="Capricorn"; 
-    } 
-          
-    else if (month == 1){ 
-        if (day < 20) 
-        astro_sign = "Capricorn"; 
-        else
-        astro_sign = "Aquarius"; 
-    } 
-          
-    else if (month == 2){ 
-        if (day < 19) 
-        astro_sign = "Aquarius"; 
-        else
-        astro_sign = "Pisces"; 
-    } 
-          
-    else if(month == 3){ 
-        if (day < 21)  
-        astro_sign = "Pisces"; 
-        else
-        astro_sign = "Aries"; 
-    } 
-    else if (month == 4){ 
-        if (day < 20) 
-        astro_sign = "Aries"; 
-        else
-        astro_sign = "Taurus"; 
-    } 
-          
-    else if (month == 5){ 
-        if (day < 21) 
-        astro_sign = "Taurus"; 
-        else
-        astro_sign = "Gemini"; 
-    } 
-          
-    else if( month == 6){ 
-        if (day < 21) 
-        astro_sign = "Gemini"; 
-        else
-        astro_sign = "Cancer"; 
-    } 
-          
-    else if (month == 7){ 
-        if (day < 23) 
-        astro_sign = "Cancer"; 
-        else
-        astro_sign = "Leo"; 
-    } 
-          
-    else if( month == 8){ 
-        if (day < 23)  
-        astro_sign = "Leo"; 
-        else
-        astro_sign = "Virgo"; 
-    } 
-          
-    else if (month == 9){ 
-        if (day < 23) 
-        astro_sign = "Virgo"; 
-        else
-        astro_sign = "Libra"; 
-    } 
-          
-    else if (month == 10){ 
-        if (day < 23) 
-        astro_sign = "Libra"; 
-        else
-        astro_sign = "Scorpio"; 
-    } 
-          
-    else if (month == 11){ 
-        if (day < 22) 
-        astro_sign = "Scorpio"; 
-        else
-        astro_sign = "Sagittarius"; 
-    } 
-   return astro_sign;
-} 
-
+		if ((date>21 && month == 12) || (date<=19 && month== 1)){
+	           return  "Capricon";
+	       }
+	       if ((date>20 && month ==1) || (date<=18 && month == 2)){
+	           return "Aquarius";
+	       }
+	       if ((date>19 && month == 2) || (date <=20 && month == 3)){
+	           return "Pisces";
+	       }
+	       if ((date>21 && month == 3) || (date <=20 && month == 4)){
+	           return "aries";
+	       }
+	       if ((date>21 && month == 4) || (date <=20 && month == 5)){
+	           return "Taurus";
+	       }
+	       if ((date>21 && month == 5) || (date<=20 && month == 6)){
+	           return "Gemini";
+	       }
+	       if ((date>21 && month == 6) || (date<=20 && month == 7)){
+	           return "Cancer";
+	       }
+	       if ((date>21 && month  == 7) || (date<=20 && month== 8)){
+	           return "Leo";
+	       }
+	       if ((date>21 && month ==8) || (date<=22 && month == 9)){
+	           return "Virgo";
+	       }
+	       if ((date>23 && month == 9) || (date<=20 && month ==10)){
+	           return "Libra";
+	       }
+	       if ((date>21 && month == 10) || (date<=22 && month == 11)){
+	           return "Scorpio";
+	       }
+	       if ((date>23 && month == 11) || (date<=20 && month == 12)){
+	           return "Sagitarius";
+	       }
+	       else
+	    	   return "please enter all the values";
+		
+		
+	}
+	
 }

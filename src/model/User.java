@@ -1,37 +1,19 @@
 package model;
 
 //Type your code here
-import java.time.LocalDate;
-
-public class Astrozone_entervalues {
-	private String name;
-	private String gender;
-	private String dob;
-	public Astrozone_entervalues(String name, String gender, String dob){
-		this.name = name;
-		this.gender = gender;
-		this.dob = dob;
+public class User
+{
+	public String name;
+	 public int d;
+	public int m;
+	
+	
+	
+	public User(String name,String date,String month)
+	{
+		this.name=name;
+		d=Integer.parseInt(date);
+		m=Integer.parseInt(month);
 	}
-
-	public String getName() {
-		
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		System.out.println(name);
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getDob() {
-		return dob;
-	}
-	public void setDob(String dob) {
-		this.dob = dob;
-}
+	
 }
